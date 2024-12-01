@@ -1,0 +1,33 @@
+{{- $global := .Values.global -}}
+{{- $namespace := .Values.global.namespace -}}
+
+apiVersion: karpenter.k8s.aws/v1alpha1
+kind: AWSNodeTemplate
+metadata:
+  name: {{ $namespace }}-nodetemplate
+spec:
+  subnetSelector:
+    aws-ids: {{ $global.nodeSubnets }}
+  securityGroupSelector:
+    aws-ids: {{ $global.nodeSecurityGroups }}
+  amiSelector:
+    aws-ids: {{ $global.imageid }}
+  tags: 
+  {{- range $scpTag := $global.scpTags }}
+       {{ $scpTag.key }} : {{ $scpTag.value }}
+  {{- end }}
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeSize: 100Gi
+        volumeType: gp3
+        #iops: 3000
+        deleteOnTermination: true
+        encrypted: true
+        kmsKeyID: {{ $global.kmskeyid }}
+        spec:
+  metadataOptions:
+    httpEndpoint: enabled
+    httpProtocolIPv6: disabled
+    httpPutResponseHopLimit: 2
+    httpTokens: required

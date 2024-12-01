@@ -1,0 +1,94 @@
+{{- $global := .Values.global -}}
+{{- $namespace := .Values.global.namespace -}}
+{{- $tlsCertificateARN := .Values.global.tlsCertificateARN -}}
+{{- $tlsCipherPolicy := .Values.global.tlsCipherPolicy -}}
+{{- $ingressSubnets := .Values.global.ingressSubnets -}}
+{{- $ingressSecurityGroups := .Values.global.ingressSecurityGroups -}}
+{{- range $key, $values := .Values.deployments }}
+{{- range $msgServiceDetails := $values }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cluster-{{$namespace}}-{{$msgServiceDetails.deploymentName}}
+  namespace: {{ $namespace }}
+  annotations:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+#   alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/certificate-arn: {{ $tlsCertificateARN }}
+    alb.ingress.kubernetes.io/healthcheck-path: {{ $msgServiceDetails.healthCheckUrl }}
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: "5"
+    alb.ingress.kubernetes.io/healthcheck-timeout-seconds: "2"
+    alb.ingress.kubernetes.io/healthy-threshold-count: "2"
+    alb.ingress.kubernetes.io/unhealthy-threshold-count: "2"
+    alb.ingress.kubernetes.io/group.name: {{ $global.ALBName }}
+    alb.ingress.kubernetes.io/group.order: {{ $msgServiceDetails.ruleOrder }}
+    alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled={{$msgServiceDetails.stickiness}},stickiness.lb_cookie.duration_seconds=86400
+    alb.ingress.kubernetes.io/ssl-policy: {{ $global.tlsCipherPolicy }}
+    alb.ingress.kubernetes.io/subnets: {{ $ingressSubnets }}
+    {{- if ne $ingressSecurityGroups "" }}
+    alb.ingress.kubernetes.io/security-groups: {{ $ingressSecurityGroups }}
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "false"
+    {{- end }}
+spec:
+  ingressClassName: alb
+  rules:
+  - host: {{ $global.hostUrl }}
+    http:
+      paths:
+      {{- range $urlPath := $msgServiceDetails.appUrlPath }}
+      - path: {{$urlPath}}
+        pathType: Prefix
+        backend:
+          service:
+            name: {{$msgServiceDetails.deploymentName}}-active
+            port: 
+              number: 5000
+      {{- end }}
+{{- end }}
+---
+{{- end }}
+      
+---
+
+{{- range $key, $values := .Values.deployments }}
+{{- range $msgServiceDetails := $values }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cluster-{{$namespace}}-{{$msgServiceDetails.deploymentName}}-sslredirect
+  namespace: {{ $namespace }}
+  annotations:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/actions.ssl-redirect: '{"Type": "redirect", "RedirectConfig": { "Protocol": "HTTPS", "Port": "443", "StatusCode": "HTTP_301"}}'
+    alb.ingress.kubernetes.io/scheme: internal
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: {{ $global.ALBName }}
+    alb.ingress.kubernetes.io/group.order: {{ $msgServiceDetails.ruleOrder }}
+    alb.ingress.kubernetes.io/healthcheck-path: {{ $msgServiceDetails.healthCheckUrl }}
+    alb.ingress.kubernetes.io/healthcheck-interval-seconds: "5"
+    alb.ingress.kubernetes.io/healthcheck-timeout-seconds: "2"
+    alb.ingress.kubernetes.io/healthy-threshold-count: "2"
+    alb.ingress.kubernetes.io/unhealthy-threshold-count: "2"
+    alb.ingress.kubernetes.io/subnets: {{ $ingressSubnets }}
+    {{- if ne $ingressSecurityGroups "" }}
+    alb.ingress.kubernetes.io/security-groups: {{ $ingressSecurityGroups }}
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "false"
+    {{- end }}
+spec:
+  ingressClassName: alb
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ssl-redirect
+            port: 
+              name: use-annotation
+{{- end }}
+---
+{{- end }}
+              

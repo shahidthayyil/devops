@@ -1,0 +1,165 @@
+{{- $global := .Values.global -}}
+{{- $appVersion := .Chart.AppVersion -}}
+{{- $pluginVersion := .Values.global.pluginVersion -}}
+{{- $namespace := .Values.global.namespace -}}
+{{- $ecrRepo := .Values.ecrRepo -}}
+{{- $secretVars := .Values.secretVars -}}
+{{- $iloyalinit := .Values.iloyalinit -}}
+{{- $iloyalplugin := .Values.iloyalplugin -}}
+{{- $globalEnvVars := .Values.globalEnvVars -}}
+{{- range $key, $values := .Values.deployments }}
+{{- range $msgServiceDetails := $values }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ $msgServiceDetails.deploymentName }}
+  namespace : {{ $namespace }}
+  labels:
+    {{- range $msgServiceDetails.podLabels }}
+      {{ . }}
+    {{- end }}
+spec:
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: {{ $msgServiceDetails.deploymentName }}
+              operator: In
+              values: 
+                {{- range $msgServiceDetails.selectorLabels }}
+                  {{ . }}
+                {{- end }}
+          topologyKey: topology.kubernetes.io/zone
+  replicas: {{$msgServiceDetails.replicas }}
+  selector:
+    matchLabels: 
+    {{- range $msgServiceDetails.selectorLabels }}
+      {{ . }}
+    {{- end }}
+  replicas: {{ $msgServiceDetails.replicas }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 50%
+  template:
+    metadata:
+      name : {{ $msgServiceDetails.deploymentName }}-pod
+      namespace : {{ $namespace }}
+      labels:
+      {{- range $msgServiceDetails.selectorLabels }}
+        {{ . }}
+      {{- end }}
+    spec:
+      terminationGracePeriodSeconds: 10
+      restartPolicy: Always
+      nodeSelector:
+        namespace: {{ $namespace }}
+        service: {{ $msgServiceDetails.nodeLabel }}
+      initContainers:      
+      {{- range $init := $iloyalinit }}
+        - name: "{{ $init.name }}"
+          image: {{$global.ecrRepo}}/{{$init.initimage}}:{{$init.initimageversion}}
+          imagePullPolicy: Always
+          command: [sh, -c]
+          args: ["{{ $init.args }}"]
+          volumeMounts:
+            - mountPath: {{ $init.mountPath }}
+              name: {{ $init.volumename }}
+      {{- end }}
+      {{- range $init := $iloyalplugin }}
+        - name: "{{ $init.name }}"
+          image: {{$global.ecrRepo}}/{{$init.initimage}}:{{$global.pluginVersion}}
+          imagePullPolicy: Always
+          command: [sh, -c]
+          args: ["{{ $init.args }}"]
+          volumeMounts:
+            - mountPath: {{ $init.mountPath }}
+              name: {{ $init.volumename }}
+      {{- end }}
+      containers:
+      - name: {{$msgServiceDetails.deploymentName}}
+        image: {{$global.ecrRepo}}/{{$msgServiceDetails.imageName}}:{{$global.appVersion}}
+        imagePullPolicy: Always
+        lifecycle:
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "/app/home/diagnostics/diagnostics.sh"]
+        env:
+          - name: "releaseversion"
+            value: "{{$global.appVersion}}"
+          - name: "releaseTime"
+            value: "{{$global.DeployedTime}}"
+        {{- range $globalEnvVar := $globalEnvVars }}
+          - name : "{{ $globalEnvVar.name }}"
+            value : "{{ $globalEnvVar.value }}"
+        {{- end }}
+        {{- range $envVar := $msgServiceDetails.envVars }}
+          - name : "{{ $envVar.name }}"
+            value : "{{ $envVar.value }}"
+        {{- end }}
+        {{- range $secretVar := $secretVars }}
+          - name : "{{ $secretVar.name }}"
+            valueFrom:
+              secretKeyRef:
+                key:  "{{ $secretVar.value }}"
+                name: "{{ $secretVar.value }}"
+        {{- end }}
+        ports:
+          - name: http
+            containerPort: 5000
+            protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: {{ $msgServiceDetails.healthCheckUrl }}
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 600
+          periodSeconds: 10
+          timeoutSeconds: 3
+          successThreshold: 1
+          failureThreshold: 7
+        readinessProbe:
+          httpGet:
+            path: {{ $msgServiceDetails.healthCheckUrl }}
+            port: http
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 3
+          timeoutSeconds: 7
+          successThreshold: 2
+          failureThreshold: 200
+        volumeMounts:
+        - name: app-config
+          mountPath: {{$msgServiceDetails.configMountPath}}
+        - name: app-logs
+          mountPath: /app/logs/iLoyal
+        - name: iflycp-agent-volume
+          mountPath: /iflycp-agent-daemon
+        - name: iflycustomplugins-volume
+          mountPath: /iflycustomplugins
+        resources:
+          limits:
+            cpu: {{$msgServiceDetails.maxCpu }}
+            memory: {{$msgServiceDetails.maxMemory }}
+          requests:
+            cpu: {{$msgServiceDetails.minCpu }}
+            memory: {{$msgServiceDetails.minMemory }}
+#        command: ["/bin/sh"]
+#        args: ["-c", "while true; do echo hello; sleep 10;done"]
+      volumes:
+      - name: app-config
+        persistentVolumeClaim:
+          claimName: {{ $namespace }}-efs-{{$msgServiceDetails.efsPVC}}-pvc
+      - name: app-logs
+        hostPath:
+          path: /app/logs/iLoyal
+      - name: iflycp-agent-volume
+        emptyDir: {}
+      - name: iflycustomplugins-volume
+        emptyDir: {}
+{{- end }}
+---
+{{- end }}

@@ -1,0 +1,21 @@
+{{- $global := .Values.global -}}
+{{- $namespace := .Values.global.namespace -}}
+{{- range $key, $values := .Values.deployments }}
+{{- range $msgServiceDetails := $values }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{$msgServiceDetails.deploymentName}}
+  namespace: {{ $namespace }}
+spec:
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    {{- range $msgServiceDetails.selectorLabels }}
+      {{ . }}
+    {{- end }}
+{{- end }}
+---
+{{- end }}
