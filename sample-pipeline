@@ -1,0 +1,877 @@
+Map ConfigS3PathMap = [
+	"JAL-UAT"		    : "JAL/UAT",
+	"JAL-FAT"		    : "JAL/FAT",
+	"JAL-QAG"		    : "JAL/QAG",
+	"JAL-PREFAT"		: "JAL/PREFAT",
+	"JAL-SIT"		    : "JAL/SIT",
+	"JAL-TRNG"		    : "JAL/TRNG",
+	"JAL-Batch"		    : "JAL/batch",
+	"JAL-PROD"		    : "JAL/PROD",
+	"JAL-Dev"		    : "JAL/DEV",
+	"LTP-DEV"		    : "JAL/LTP-DEV",
+	"LTPPH2-Dev"		: "JAL/LTPPH2-DEV",
+	"LTP-FAT"		    : "JAL/LTP-FAT",
+	"LTPPH1-QAG"		: "JAL/LTPPH1-QAG",
+	"LTPPH1-DM"		    : "JAL/LTPPH1-DM",
+	"LTPPH2-DM"		    : "JAL/LTPPH2-DM",
+	"LTPPH1-FAT"		: "JAL/LTPPH1-FAT",
+	"LTPPH1-SIT"		: "JAL/LTPPH1-SIT",
+	"LTPPH1-DEMO"		: "JAL/LTPPH1-DEMO",
+	"LTPPH2-QAG"		: "JAL/LTPPH2-QAG",
+	"LTP-DEVNC"		    : "JAL/LTP-DEVNC",
+    "LTPPH2-DEVNC"		: "JAL/LTPPH2-DEVNC",
+	"Impl-Trg"          :  "Impl/TRG",
+    "JetAirways-Staging": "JetAirways/Staging",
+    "JetAirways-FAT"    : "JetAirways/FAT",
+    "Qantas-FAT"        : "Qantas/FAT",
+    "QFF-Staging"    	: "Qantas/Staging",
+    "QFF-SIT"           : "Qantas/SIT",
+    "QFF-PROD"          : "Qantas/PROD",
+	"LMDev"             : "LM/DEV",
+	"LM-FAT"            : "Lifemiles/FAT",
+	"AC-SIT"            : "AirCanada/SIT",
+	"AC-FAT"            : "AirCanada/FAT",
+	"AC-UAT"            : "AirCanada/UAT",
+	"AC-IBE"            : "AirCanada/IBE",
+	"AC-PROD"           : "AirCanada/PROD",
+	"QH-FAT"            : "Bamboo/FAT",
+	"SFJ-SIT"           : "StarFlyer/SIT",
+	"SFJ-DM"            : "StarFlyer/DM",
+	"SFJ-FAT"           : "StarFlyer/FAT",
+	"SFJ-TRG"           : "StarFlyer/TRG",
+	"SFJ-UAT"           : "StarFlyer/UAT",
+	"SFJ-PRD"           : "StarFlyer/PRD",
+    "SNJ-FAT"           : "Solaseed/FAT",
+	"EK-DM"             : "Emirates/DM",
+	"UAE-PROD"             : "Emirates/DM",	
+	"EK-FAT"            : "Emirates/FAT",
+	"EK-E2E"            : "Emirates/E2E",
+	"EK-QAG"            : "Emirates/QAG",
+	"EK-STG"            : "Emirates/STG",
+	"EK-PROD"           : "Emirates/PROD",
+	"ANZ-FAT"           : "AirNZ/FAT",
+	"QH-PROD"           : "Bamboo/PROD",
+	"NFR-PROD"          : "AirCanada/NFR",
+	"CI-STG"            : "CI/Staging",
+    ]
+Map CoreDBPathMap = [
+    "AC-FAT"            : "AirCanada",
+	"EK-FAT"            : "Emirates",
+	"AC-SIT"            : "AirCanada",
+	"AC-IBE"            : "AirCanada",
+	"AC-UAT"            : "AirCanada",
+	"AC-FAT"            : "AirCanada",
+	"AC-PROD"           : "AirCanada",
+	"EK-E2E"            : "Emirates",
+	"EK-QAG"            : "Emirates",
+	"EK-DM"             : "Emirates",
+	"EK-FAT"            : "Emirates",
+	"EK-STG"            : "Emirates",
+	"EK-PROD"           : "Emirates",
+	"EK-GC"             : "Emirates",
+	"AC-UAT"            : "AirCanada",
+	"LMDev"             : "LM",
+	"SFJ-SIT"           : "StarFlyer",
+	"SFJ-FAT"           : "StarFlyer",
+	"SFJ-DM"            : "StarFlyer",
+	"SFJ-TRG"           : "StarFlyer",
+	"SFJ-UAT"           : "StarFlyer",
+	"SFJ-PRD"           : "StarFlyer",
+    "SNJ-FAT"           : "Solaseed",
+	"JAL-PROD"          : "JAL",
+	"JAL-UAT"           : "JAL",
+	"JAL-FAT"           : "JAL",
+	"JAL-QAG"           : "JAL",
+    "JAL-PREFAT"        : "JAL",
+	"JAL-SIT"           : "JAL",
+	"JAL-TRNG"          : "JAL",
+	"JAL-Dev"           : "JAL",
+	"LTP-Dev"           : "JAL-LTP",
+	"Impl-Trg"          :  "Trg",
+	"LTPPH2-Dev"        : "JA-LTPL",
+	"LTP-DEVNC"         : "JAL-LTP",
+	"LTPPH2-DEVNC"      : "JAL-LTPPH2",
+	"LTP-FAT"           : "JAL",
+	"LTPPH1-QAG"        : "JAL",
+	"LTPPH1-DM"         : "JAL",
+	"LTPPH2-QAG"        : "JAL",
+	"LTPPH2-DM"         : "JAL",
+	"LTPPH1-FAT"        : "JAL",
+	"LTPPH1-SIT"        : "JAL",
+	"LTPPH1-DEMO"       : "JAL",
+	"ANZ-FAT"           : "AirNZ",
+	"QH-PROD"           : "Bamboo",
+	"NFR-PROD"          : "AirCanada",
+	"CI-STG"            : "CI"
+	
+    ]
+Map CoreDBS3PathMap = [
+    "AC-FAT"            : "AirCanada/FAT",
+	"AC-SIT"            : "AirCanada/SIT",
+	"AC-IBE"            : "AirCanada/IBE",
+	"AC-UAT"            : "AirCanada/UAT",
+	"AC-PROD"           : "AirCanada/PROD",
+	"EK-E2E"            : "Emirates/E2E",
+	"EK-QAG"            : "Emirates/QAG",
+	"EK-STG"            : "Emirates/STG",
+	"EK-DM"             : "Emirates/DM",
+	"EK-FAT"            : "Emirates/FAT",
+	"EK-GC"            : "Emirates/GC",
+	"EK-PROD"           : "Emirates/PROD",
+	"SFJ-SIT"           : "StarFlyer",
+	"SFJ-FAT"           : "StarFlyer",
+	"SFJ-TRG"           : "StarFlyer",
+	"SFJ-UAT"           : "StarFlyer",
+	"SFJ-PRD"           : "StarFlyer",
+	"SFJ-DM"            : "StarFlyer",
+    "SNJ-FAT"           : "Solaseed",
+	"LMDev"             : "LifeMiles",
+	"JAL-PROD"          : "JAL",
+	"JAL-UAT"           : "JAL/UAT",
+	"JAL-FAT"           : "JAL/FAT",
+	"JAL-QAG"           : "JAL/QAG",
+	"JAL-PREFAT"        : "JAL/PREFAT",
+	"JAL-SIT"           : "JAL/SIT",
+	"JAL-TRNG"          : "JAL/TRNG",
+	"JAL-Dev"           : "JAL/DEV",
+	"LTP-Dev"           : "JAL/DEV",
+	"Impl-Trg"          :  "Trg",
+	"LTPPH2-Dev"        : "JAL/LTPPH2-Dev",
+	"LTP-DEVNC"         : "JAL/LTP-DEVNC",
+	"LTPPH2-DEVNC"      : "JAL/LTPPH2-DEVNC",
+	"LTP-FAT"           : "LTP/FAT",
+	"LTPPH1-QAG"        : "JAL/LTPPH1-QAG",
+	"LTPPH1-DM"         : "LTPPH1/DM",
+	"LTPPH2-QAG"        : "LTPPH2/QAG",
+	"LTPPH2-DM"         : "LTPPH2/DM",
+	"LTPPH1-FAT"        : "LTPPH1/FAT",
+	"LTPPH1-SIT"        : "LTPPH1/SIT",
+	"LTPPH1-DEMO"       : "LTPPH1/Demo",
+	"ANZ-FAT"           : "AirNZ/FAT",
+	"QH-PROD"           : "Bamboo",
+	"NFR-PROD"          : "AirCanada/NFR",
+	"CI-STG"            :  "CI/Staging"
+	
+    ]
+Map iFlyCPPathMap = [
+    "Qantas-FAT"        : "Sydney/NonProd",
+    "QFF-Staging"    	: "Sydney/NonProd",
+    "QFF-SIT"           : "Sydney/NonProd",
+    "QFF-PROD"          : "Qantas/PROD",
+	"LMDev"             : "Lifemiles/DEV",
+	"LM-FAT"            : "Lifemiles/FAT",
+	"AC-SIT"            : "AirCanada/NonProd",
+	"AC-FAT"            : "AirCanada/NonProd",
+	"AC-UAT"            : "AirCanada/NonProd",
+	"AC-IBE"            : "AirCanada/NonProd",
+	"AC-NonProd"        : "AirCanada/NonProd",
+	"AC-PROD"           : "AirCanada/PROD",
+	"QH-FAT"            : "Bamboo/NonProd",
+	"SFJ-SIT"           : "StarFlyer/NonProd",
+	"SFJ-FAT"           : "StarFlyer/NonProd",
+	"SFJ-DM"            : "StarFlyer/NonProd",
+	"SFJ-TRG"           : "StarFlyer/NonProd",
+	"SFJ-UAT"           : "StarFlyer/NonProd",
+	"SFJ-PRD"           : "Tokyo/PROD",
+    "SNJ-FAT"           : "Solaseed/NonProd",
+	"JAL-PROD"        	: "Tokyo/PROD",
+	"EK-QAG"        	: "Ireland/NonProd",
+	"EK-FAT"        	: "Ireland/NonProd",
+	"EK-E2E"        	: "Ireland/NonProd",
+	"EK-DM"        	    : "Ireland/NonProd",
+	"EK-STG"        	: "Ireland/NonProd",
+	"EK-PROD"        	: "Ireland/Prod",
+	"JAL-NonPROD"       : "Tokyo/NonPROD",
+	"ANZ-FAT"           : "AirNZ/FAT",
+	"QH-PROD"           : "Ireland/PROD",
+	"NFR-PROD"          : "AirCanada/NFR",
+	"UAE-PROD"          :"UAE/Prod"
+    ]	
+Map DBAgentPathMap = [
+    "Qantas-FAT"        : "Qantas/FAT",
+    "QFF-Staging"    	: "Sydney/SIT",
+    "QFF-SIT"           : "Qantas/SIT",
+    "QFF-PROD"          : "Qantas/PROD",
+	"LMDev"             : "Lifemiles/DEV",
+	"LM-FAT"            : "Lifemiles/FAT",
+	"AC-SIT"            : "AirCanada/NonProd",
+	"AC-FAT"            : "AirCanada/NonProd",
+	"AC-UAT"            : "AirCanada/NonProd",
+	"AC-IBE"            : "AirCanada/NonProd",
+	"AC-NonProd"        : "AirCanada/NonProd",
+	"AC-PROD"           : "AirCanada/PROD",
+	"QH-FAT"            : "Bamboo/NonProd",
+	"SFJ-SIT"           : "StarFlyer/NonProd",
+	"SFJ-FAT"           : "StarFlyer/NonProd",
+	"SFJ-DM"            : "StarFlyer/NonProd",
+	"SFJ-TRG"           : "StarFlyer/NonProd",
+	"SFJ-UAT"           : "StarFlyer/NonProd",
+	"SFJ-PRD"           : "StarFlyer/PROD",
+    "SNJ-FAT"           : "Solaseed/NonProd",
+	"JAL-PROD"        	: "Tokyo/PROD",
+	"EK-QAG"        	: "Ireland/NonProd",
+	"EK-FAT"        	: "Ireland/NonProd",
+	"EK-E2E"        	: "Ireland/NonProd",
+	"EK-DM"        	    : "Ireland/NonProd",
+	"EK-STG"        	: "Ireland/NonProd",
+	"EK-PROD"        	: "Ireland/NonProd",
+    "JAL-NonPROD"       : "Tokyo/NonPROD",
+	"ANZ-FAT"           : "AirNZ/FAT",
+	"QH-PROD"           : "Ireland/PROD",
+	"NFR-PROD"          : "AirCanada/NFR",
+	"CI-STG"            :  "CI/STG"
+	
+    ]	
+Map CSGPathMap = [
+    "Qantas-FAT"        : "Impl/Qantas/QFF-FAT",
+    "QFF-Staging"       : "Impl/Qantas/QFF-Staging",
+	"QFF-SIT"           : "Impl/Qantas/QFF-SIT",
+	"QFF-PROD"          : "Impl/Qantas/QFF-PROD",
+	"LMDev"             : "Impl/LM/DEV",
+	"LM-FAT"            : "Impl/Lifemiles/FAT",
+	"SFJ-SIT"           : "Impl/StarFlyer/SIT",
+	"SFJ-FAT"           : "Impl/StarFlyer/FAT",
+	"SFJ-DM"            : "Impl/StarFlyer/DM",
+	"SFJ-TRG"           : "Impl/StarFlyer/TRG",
+	"SFJ-UAT"           : "Impl/StarFlyer/UAT",
+	"SFJ-PRD"           : "Impl/StarFlyer/PRD",
+    "SNJ-FAT"           : "Impl/Solaseed/FAT",
+	"EK-DM"             : "Impl/Emirates/DM",
+	"EK-FAT"            : "Impl/Emirates/FAT",
+	"EK-E2E"            : "Impl/Emirates/E2E",
+	"EK-QAG"            : "Impl/Emirates/QAG",
+	"EK-STG"            : "Impl/Emirates/STG",
+	"EK-PROD"           : "Impl/Emirates/PROD",
+	"JAL-PROD"          : "Impl/JAL/JAL-PROD",
+	"JAL-FAT"           : "Impl/JAL/FAT",
+	"JAL-QAG"           : "Impl/JAL/QAG",
+	"JAL-PREFAT"        : "Impl/JAL/PREFAT",
+	"JAL-SIT"           : "Impl/JAL/JAL-SIT",
+	"JAL-TRNG"          : "Impl/JAL/TRNG",
+	"LTP-Dev"           : "Impl/JAL/LTP-DEV",
+	"LTPPH2-Dev"        : "Impl/JAL/LTPPH2-DEV",
+	"LTP-DEVNC"         : "Impl/JAL/LTP-DEVNC",
+	"LTPPH2-DEVNC"      : "Impl/JAL/LTPPH2-DEVNC",
+	"LTP-FAT"           : "Impl/JAL/LTP-FAT",
+	"LTPPH1-QAG"        : "Impl/JAL/LTPPH1-QAG",
+	"LTPPH1-DM"         : "Impl/JAL/LTPPH1-DM",
+	"LTPPH2-QAG"        : "Impl/JAL/LTPPH2-QAG",
+	"LTPPH2-DM"         : "Impl/JAL/LTPPH2-DM",
+	"LTPPH1-FAT"        : "Impl/JAL/LTPPH1-FAT",
+	"LTPPH1-SIT"        : "Impl/JAL/LTPPH1-SIT",
+	"LTPPH1-DEMO"       : "Impl/JAL/LTPPH1-DEMO",
+	"JAL-UAT"           : "Impl/JAL/JAL-UAT",
+	"JAL-Dev"           : "Impl/JAL/DEV",
+	"Qantas-FAT"        : "Impl/Qantas/QFF-FAT",
+	"QH-FAT"            : "Impl/Bamboo/FAT",
+	"ANZ-FAT"           : "Impl/AirNZ/FAT",
+	"QH-PROD"           : "Impl/Bamboo/PROD",
+	"CI-STG"            :  "Impl/CI/Staging"
+    ]
+Map CLoungePathMap = [
+    "Qantas-FAT"        : "Impl/Qantas/QFF-FAT",
+    "QFF-Staging"       : "Impl/Qantas/QFF-Staging",
+    "QFF-PROD"          : "Impl/Qantas/QFF-Prod",
+    "QFF-SIT"           : "Impl/Qantas/QFF-SIT",
+    
+    ]
+Map CLoungeS3PathMap = [
+    "Qantas-FAT"        : "Qantas/ChairmansLounge/FAT",
+    "QFF-Staging"       : "Qantas/ChairmansLounge/Staging",
+    "QFF-SIT"           : "Qantas/ChairmansLounge/SIT",
+    "QFF-PROD"       	: "Qantas/ChairmansLounge/PROD",
+    ]
+Map FileProcessorS3PathMap = [
+    "JAL-FAT"           : "JAL/FileProcessor/FAT",
+    ]	
+Map AuthServerS3PathMap = [
+    "Qantas-FAT"        : "Impl/Qantas/NonProd",
+    "QFF-Staging"       : "Impl/Qantas/NonProd",
+    "QFF-SIT"           : "Impl/Qantas/SIT",
+    "QFF-PROD"          : "Impl/Qantas/PROD",
+    "LMDev"             : "Impl/Lifemiles/DEV",
+	"EK-DM"             : "Impl/Emirates/DM",
+	"AC-PROD"          	: "Impl/AirCanada/PROD",
+	"AC-SIT"          	: "Impl/AC/SIT",
+	"AC-UAT"          	: "Impl/AC/UAT",
+	"AC-IBE"          	: "Impl/AC/IBE",
+	"CI-STG"            :  "Impl/CI/Staging",
+	"EK-FAT"          	: "Impl/Emirates/FAT",
+	"EK-E2E"          	: "Impl/Emirates/E2E",
+	"EK-QAG"          	: "Impl/Emirates/QAG",
+	"EK-STG"          	: "Impl/Emirates/STG",
+	"EK-PROD"          	: "Impl/Emirates/PROD",
+	"JAL-PROD"          : "Impl/JAL/PROD",
+	"JAL-FAT"           : "Impl/JAL/FAT",
+	"JAL-QAG"           : "Impl/JAL/QAG",
+	"JAL-PREFAT"        : "Impl/JAL/PREFAT",
+	"LTPPH2-DEV"        : "Impl/JAL/LTPPH2-DEV",
+	"LTPPH2-DEVNC"      : "Impl/JAL/LTPPH2-DEVNC",
+	"LTP-FAT"           : "Impl/JAL/LTP-FAT",
+	"LTPPH1-QAG"        : "Impl/JAL/LTPPH1-QAG",
+	"LTPPH1-DM"         : "Impl/JAL/LTPPH1-DM",
+	"LTPPH1-FAT"        : "Impl/JAL/LTPPH1-FAT",
+	"LTPPH1-SIT"        : "Impl/JAL/LTPPH1-SIT",
+	"LTPPH1-DEMO"       : "Impl/JAL/LTPPH1-DEMO",
+    ]
+Map SproutConsolePathMap = [
+    "QFF-SIT"           : "Qantas/QFF-SIT",
+    "QFF-Staging"       : "Qantas/QFF-Staging",
+    "QFF-PROD"          : "Qantas/QFF-PROD",
+    "LMDev"             : "Lifemiles/DEV",
+    "SFJ-SIT"           : "StarFlyer/SIT",
+    "SFJ-FAT"           : "StarFlyer/FAT",
+	"SFJ-DM"            : "StarFlyer/DM",
+	"SFJ-TRG"           : "StarFlyer/TRG",
+	"SFJ-UAT"           : "StarFlyer/UAT",
+	"SFJ-PRD"           : "StarFlyer/PRD",
+    "SNJ-FAT"           : "Solaseed/FAT",
+	"EK-E2E"            : "Emirates/E2E",
+	"EK-FAT"            : "Emirates/FAT",
+	"EK-QAG"            : "Emirates/QAG",
+	"EK-STG"            : "Emirates/STG",
+	"EK-PROD"           : "Emirates/PROD",
+	"AC-PROD"           : "AirCanada/PROD",
+	"AC-SIT"            : "AirCanada/SIT",
+	"AC-UAT"            : "AirCanada/UAT",
+	"AC-IBE"            : "AirCanada/IBE",
+	"JAL-PROD"          : "JAL/PROD",
+	"JAL-FAT"           : "JAL/FAT",
+	"JAL-QAG"           : "JAL/QAG",
+	"JAL-PREFAT"        : "JAL/PREFAT",
+	"JAL-SIT"           : "JAL/SIT",
+	"JAL-TRNG"          : "JAL/TRNG",
+	"JAL-UAT"           : "JAL/UAT",
+	"JAL-Dev"           : "JAL/DEV",
+	"LTP-Dev"           : "JAL/LTP-DEV",
+	"LTPPH2-Dev"        : "JAL/LTPPH2-DEV",
+	"LTP-DEVNC"         : "JAL/LTP-DEVNC",
+	"LTPPH2-DEVNC"      : "JAL/LTPPH2-DEVNC",
+	"LTP-FAT"           : "JAL/LTP-FAT",
+	"LTPPH1-QAG"        : "JAL/LTPPH1-QAG",
+	"LTPPH1-DM"         : "JAL/LTPPH1-DM",
+	"LTPPH2-QAG"        : "JAL/LTPPH2-QAG",
+	"LTPPH2-DM"         : "JAL/LTPPH2-DM",
+	"LTPPH1-FAT"        : "JAL/LTPPH1-FAT",
+	"LTPPH1-SIT"        : "JAL/LTPPH1-SIT",	
+	"LTPPH1-DEMO"       : "JAL/LTPPH1-DEMO",
+	"QH-FAT"            : "Bamboo/FAT",
+	"QH-PROD"           : "Bamboo/PROD",
+	"CI-STG"            : "CI/Staging"
+	
+	]
+Map PeggyPathMap = [
+    "AC-PROD"     		: "Canada/PROD",
+    "JAL-PROD"        	: "Tokyo/PROD",
+    "EK-QAG"        	: "Ireland/NonProd",
+	"EK-FAT"        	: "Ireland/NonProd",
+	"EK-E2E"        	: "Ireland/NonProd",
+	"EK-DM"        		: "Ireland/NonProd",
+	"EK-STG"        	: "Ireland/NonProd",
+	"EK-PROD"        	: "Ireland/NonProd",
+	"SFJ-PRD"        	: "Tokyo/PROD" ,
+    ]
+pipeline {
+    agent {
+        node {
+            label 'master'
+            customWorkspace 'workspace/iLoyalCI'
+        }
+    }
+    environment {
+        iamAssumeRoleS3 = 'arn:aws:iam::861764844105:role/IBS_LOB_Assume_Role'
+        APITestSuiteRepo = 'http://iloyalscm.ibsplc.com/svn/codebase/automation/branches/5.3'
+        SRC_PATH = '/projects/iflyloyalty/home/jenkins/home/workspace/iLoyalCI'
+    }
+    stages {
+        stage('Parameters'){
+            steps {
+                script {
+                    properties([
+                        parameters([
+                            choice(choices: ['JetAirways-Staging', 'GulfAir-Prod', 'GulfAir-Staging','JAL-UAT', 'JAL-FAT', 'JAL-QAG', 'JAL-PREFAT', 'JAL-SIT', 'JAL-TRNG','JAL-PROD' ,'JAL-Batch', 'JAL-Dev', 'Qantas-FAT','QFF-Staging','JetAirways-FAT','QFF-SIT','LMDev','LM-FAT', 'AC-SIT','QFF-PROD','QH-FAT','SFJ-SIT','SFJ-DM','SFJ-FAT','SFJ-TRG','SFJ-UAT','SFJ-PRD', 'SNJ-FAT', 'AC-FAT', 'AC-IBE','EK-DM', 'AC-PROD', 'EK-FAT', 'EK-E2E', 'EK-QAG', 'EK-STG', 'EK-PROD', 'EK-GC', 'AC-UAT','ANZ-FAT','NFR-PROD','QH-PROD', 'LTP-DEVNC', 'LTP-DEV', 'LTP-FAT', 'LTPPH1-SIT', 'LTPPH1-QAG', 'LTPPH1-DM', 'LTPPH1-FAT', 'LTPPH1-DEMO', 'EK-NonProd', 'LTPPH2-QAG', 'LTPPH2-DM', 'LTPPH2-Dev', 'LTPPH2-DEVNC', 'CI-STG', 'Impl-Trg', 'UAE-PROD'], 
+                                description: 'Enter the environment for which configuration is updated', 
+                                name: 'Environment'),
+                            extendedChoice( 
+                                defaultValue: 'Product Config', 
+                                description: '', 
+                                descriptionPropertyValue: 'Product Config, UCV, Liquibase, CSG, apigateway, proxy, peggy, iFlyCP Config, DBAgent, clounge, fileprocessor, authserver, Affinity Config,  Peggy Config, Terraform, Kubernetes Config, Helm Charts, API Test Suite, Logstash, Sprout Console, SSM',
+                                multiSelectDelimiter: ',', 
+                                name: 'Choose artefacts to Copy to S3', type: 'PT_CHECKBOX', 
+                                value: 'Product Config, UCV, Liquibase, CSG, apigateway, proxy, peggy, iFlyCP Config, DBAgent, clounge, fileprocessor, authserver, Affinity Config,  Peggy Config, Terraform, Kubernetes Config, Helm Charts, API Test Suite, Logstash, Sprout Console, SSM'),
+                             string(defaultValue: 'iflyloyaltyits3, iflyloyatlys3', 
+                                description: 'Provide the S3 bucket to which the artefacts to be copied', 
+                                name: 'S3Bucket', 
+                                trim: true),
+                             string(defaultValue: '5.3.0.0-01', 
+                                description: 'Enter the product release version', 
+                                name: 'ProdReleaseVersion', 
+                                trim: true),
+							 string(defaultValue: '', 
+                                description: 'Enter the Implementation version', 
+                                name: 'ImplVersion', 
+                                trim: true),
+                             string(defaultValue: 'release/5.2', 
+                                description: 'Enter the bitbucket branch for product & liquibase', 
+                                name: 'ReleaseVersion', 
+                                trim: true),
+                             string(defaultValue: '5.2.0.0-01', 
+                                description: 'Enter the version of iLoyal -Neo Node ', 
+                                name: 'iLoyalNeoNodeVersion', 
+                                trim: true),
+                            string(defaultValue: '5.0', 
+                                description: 'Enter the version of CSG', 
+                                name: 'CSGVersion', 
+                                trim: true),
+                            string(defaultValue: '9.0.2', 
+                                description: 'Enter the version of Sprout Console', 
+                                name: 'SproutConsoleVersion', 
+                                trim: true),
+                             string(defaultValue: '5.4.0', 
+                                description: 'Enter the version of SSM', 
+                                name: 'SSMVersion', 
+                                trim: true),  
+                            string(defaultValue: '2.2.0', 
+                                description: 'Enter the version of Affinity', 
+                                name: 'AffinityVersion', 
+                                trim: true),
+                             string(defaultValue: '7.5.0', 
+                                description: 'Enter the version of iFlyCP', 
+                                name: 'iFlyCPVersion', 
+                                trim: true),
+                             string(defaultValue: '7.5', 
+                                description: 'Enter the version of DBAgent', 
+                                name: 'DBAgentVersion', 
+                                trim: true),
+                             string(defaultValue: '1.0.0', 
+                                description: 'Enter the version of Peggy', 
+                                name: 'PeggyVersion', 
+                                trim: true),
+                             string(defaultValue: '4.0.1', 
+                                description: 'Enter the version of CLounge', 
+                                name: 'CLoungeVersion', 
+                                trim: true),
+							string(defaultValue: ' ', 
+                                description: 'Enter the version of FileProcessor', 
+                                name: 'FileProcessorVersion', 
+                                trim: true),
+                             string(defaultValue: '6.0.2', 
+                                description: 'Enter the version of AuthServer', 
+                                name: 'AuthServerVersion', 
+                                trim: true),
+                             string(defaultValue: '1.2', 
+                                description: 'Enter the version of Proxy', 
+                                name: 'ProxyVersion', 
+                                trim: true),
+                        ]
+                    )   ]   )
+                }
+            }
+        }
+        stage('BitBucket CheckOut - DevOps') { 
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Helm Charts") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Terraform") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Logstash")||
+                    "${params['Choose artefacts to Copy to S3']}".contains("API Test Suite")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/devops") {
+                    echo 'Checking out the src from devops/master .' 
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: 'master']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', 
+                                            url: 'http://bitbucket.ibsplc.com/scm/il/devops.git'
+                                            ]]
+                    ]   )
+                }
+            }
+        }
+        stage('DB Customizations CheckOut & S3 Upload') {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Liquibase")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/customizations") {
+                    echo 'Checking out the src from customizations with tag ${ImplVersion} .' 
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: '${ImplVersion}']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', 
+                                            url: 'http://bitbucket.ibsplc.com/scm/il/customizations.git'
+                                            ]]
+                    ]   )
+                    echo "Customizations To be Copied to S3"
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                        s3Upload(file:"database/"+CoreDBPathMap["${params['Environment']}"]+"", bucket:"${params['S3Bucket']}", path:"Artefacts/Liquibase/Impl/"+CoreDBS3PathMap["${params['Environment']}"]+"/customizations/${params['ProdReleaseVersion']}/Database/db")
+					}
+					
+                }
+            }
+        }
+		stage('Partner-Portal CheckOut & S3 Upload') {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Product Config")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/partnerportal") {
+                    echo 'Checking out the src from partnerportal/master .' 
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: 'master']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', 
+                                            url: 'http://bitbucket.ibsplc.com/scm/il/partnerportal.git'
+                                            ]]
+                    ]   )
+                    echo "Partnerportal To be Copied to S3"
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                        s3Upload(file:"config", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/PartnerPortal/${params['ProdReleaseVersion']}/config/")
+					}
+                }
+            }
+        }
+		stage('iFlyNeoNode CheckOut & S3 Upload') {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Product Config")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/iFlyNeoNode") {
+                    echo 'Checking out the src from iFlyNeoNode/master .' 
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: 'master']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', 
+                                            url: 'http://bitbucket.ibsplc.com/scm/il/fiss-ui.git'
+                                            ]]
+                    ]   )
+                    echo "iFlyNeoNode To be Copied to S3"
+                    withAWS(role: "${iamAssumeRoleS3}") {
+						sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode"
+                        // s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode/web-backend/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode/${params['iLoyalNeoNodeVersion']}/etc/")
+                    }
+					
+                }
+            }
+        }
+        stage('Product DB CheckOut & S3 Upload') { 
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Liquibase")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/ProductLiquibase") {
+                    echo 'Checking out the liquibase from release' 
+                    script{
+                        // checkout([$class: 'GitSCM', branches: [[name: params.ProdReleaseVersion]], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', url: 'http://bitbucket.ibsplc.com/scm/il/product.git']]])
+                        checkout([$class: 'GitSCM',
+                         branches: [[name: "${ReleaseVersion}"]],
+                         doGenerateSubmoduleConfigurations: false,
+                         extensions: [],
+                         submoduleCfg: [],
+                          userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git',
+                          url: 'http://bitbucket.ibsplc.com/scm/il/product.git']]])
+                        fileOperations([folderDeleteOperation('build')])
+                        fileOperations([folderDeleteOperation('config')])
+                        fileOperations([folderDeleteOperation('config_fraud')])
+                        fileOperations([folderDeleteOperation('eai')])
+                        fileOperations([folderDeleteOperation('pentaho')])
+                        fileOperations([folderDeleteOperation('report-templates')])
+                        fileOperations([folderDeleteOperation('utilities')])
+                        fileOperations([folderDeleteOperation('web')])
+                        fileOperations([folderDeleteOperation('webservices')])
+                        fileOperations([folderDeleteOperation('dbsrc')])
+                        fileOperations([folderCreateOperation('dbsrc')])
+                        fileOperations([folderDeleteOperation('help_files')])
+                        fileOperations([folderCreateOperation('help_files')])
+                        sh '''
+                            find -name "*.sql" | xargs cp --parents -t dbsrc
+                            find -name "*.xml" | xargs cp --parents -t dbsrc
+                        '''
+						echo "Liquibase To be Copied to S3"
+						withAWS(role: "${iamAssumeRoleS3}") {
+							s3Upload(file:"dbsrc", bucket:"${params['S3Bucket']}", path:"Artefacts/Liquibase/Impl/"+CoreDBS3PathMap["${params['Environment']}"]+"/core/${params['ProdReleaseVersion']}/Database")
+						}
+                    }
+                }
+            }
+        }
+        stage('Product Config CheckOut & S3 Upload') { 
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Product Config") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("iFlyCP Config")  ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("DBAgent")  ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Affinity Config")||
+                    "${params['Choose artefacts to Copy to S3']}".contains("clounge")||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Peggy Config") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Sprout Console") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("SSM") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("CSG") ||
+                    "${params['Choose artefacts to Copy to S3']}".contains("Auth Server")
+                }    
+            }
+            steps {
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                    echo 'Checking out the src from config/master .' 
+                    checkout([$class: 'GitSCM', 
+                        branches: [[name: 'master']], 
+                        doGenerateSubmoduleConfigurations: false, 
+                        extensions: [], 
+                        submoduleCfg: [], 
+                        userRemoteConfigs: [[credentialsId: 'iLoyalBuildUser-Git', 
+                                            url: 'http://bitbucket.ibsplc.com/scm/il/config.git'
+                                            ]]
+                    ]   )
+                    sh "rm -rf 9w Affinity APITestSuite csg gf jl ke la nz qbr qff ssm va readMe.txt .gitignore"
+                    withAWS(role: "${iamAssumeRoleS3}") {
+						sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/core"
+                        s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/core/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/core/${params['ProdReleaseVersion']}/")
+                    }
+                    withAWS(role: "${iamAssumeRoleS3}") {
+						sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode/web-backend/config/"
+                        s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode/web-backend/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoNode/${params['iLoyalNeoNodeVersion']}/")
+                    }
+					withAWS(role: "${iamAssumeRoleS3}") {
+						sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoUI/web-frontend/config/"
+                        s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoUI/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/iFlyNeoUI/${params['iLoyalNeoNodeVersion']}/")
+                    }
+                    echo "PartnerPortal tomcat folder To be Copied to S3"
+					withAWS(role: "${iamAssumeRoleS3}") {
+					    sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/PartnerPortal"
+                        s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/PartnerPortal/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/PartnerPortal/${params['ProdReleaseVersion']}/config/")
+                    }
+				}
+            }
+        }
+        stage ("APIGateway Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("apigateway")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+						sh "mkdir -p iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/APIGateway/config/"
+                        s3Upload(file:"APIGateway/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iLoyal/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/APIGateway/${params['ProdReleaseVersion']}/config/")
+                    }
+                }
+                }
+            }
+        }
+        stage ("CLounge Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("clounge")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                       s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/clounge/config", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/CustomApps/"+CLoungeS3PathMap["${params['Environment']}"]+"/${params['CLoungeVersion']}/config/")
+                    }
+                }
+                }
+            }
+        }
+        stage ("FileProcessor Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("fileprocessor")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                       s3Upload(file:"iLoyal/"+ConfigS3PathMap["${params['Environment']}"]+"/fileprocessor/config", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/CustomApps/"+FileProcessorS3PathMap["${params['Environment']}"]+"/${params['FileProcessorVersion']}/config/")
+                    }
+                }
+                }
+            }
+        }
+        stage ("AuthServer Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("authserver")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"AuthServer/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/AuthServer/"+AuthServerS3PathMap["${params['Environment']}"]+"/${params['AuthServerVersion']}/config/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("Proxy Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("proxy")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"Proxy/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/Proxy/"+ConfigS3PathMap["${params['Environment']}"]+"/${params['ProxyVersion']}/config/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("Peggy Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("peggy")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"Peggy/Impl/"+PeggyPathMap["${params['Environment']}"]+"/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/Peggy/Impl/"+PeggyPathMap["${params['Environment']}"]+"/${params['PeggyVersion']}/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("Sprout console Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Sprout Console")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"SproutConsole/Impl/"+SproutConsolePathMap["${params['Environment']}"]+"/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/SproutConsole/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/${params['SproutConsoleVersion']}/config/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("iFlyCP Config Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("iFlyCP Config")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"iFlyCP/Impl/"+iFlyCPPathMap["${params['Environment']}"]+"/server/config/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iFlyCP/Server/Impl/"+iFlyCPPathMap["${params['Environment']}"]+"/${params['iFlyCPVersion']}/config/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("iFlyCP DBAgent Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("DBAgent")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"iFlyCP/Impl/"+DBAgentPathMap["${params['Environment']}"]+"/dbagent/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/iFlyCP/DBAgent/Impl/"+DBAgentPathMap["${params['Environment']}"]+"/${params['DBAgentVersion']}/")
+                    }
+                }
+                }
+            }
+        }
+        stage ("CSG Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("CSG")
+                }    
+            }
+            steps{
+                dir("Packaging/$BUILD_NUMBER/Config/") {
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                      s3Upload(file:"CommonServicesGateway/"+CSGPathMap["${params['Environment']}"]+"/", bucket:"${params['S3Bucket']}", path:"Artefacts/ConfigHome/CSG/Impl/"+ConfigS3PathMap["${params['Environment']}"]+"/${params['CSGVersion']}/")
+                       }
+                }
+                }
+            }
+        }
+        stage ("Terraform Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Terraform")
+                }    
+            }
+            steps{
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                        s3Upload(file:"/projects/iflyloyalty/home/jenkins/home/workspace/iLoyalCI/Packaging/$BUILD_NUMBER/devops/Terraform/", bucket:"${params['S3Bucket']}", path:'Artefacts/Terraform/')
+                    }
+                }
+            }
+        }
+        stage ("K8s Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Kubernetes Config")
+                }    
+            }
+            steps{
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                        s3Upload(file:"/projects/iflyloyalty/home/jenkins/home/workspace/iLoyalCI/Packaging/$BUILD_NUMBER/devops/Kubernetes/", bucket:"${params['S3Bucket']}", path:'Artefacts/Kubernetes/')
+                    }
+                }
+            }
+        }
+        stage ("Helm Copy") {
+            when {
+                expression {
+                    "${params['Choose artefacts to Copy to S3']}".contains("Helm Charts")
+                }    
+            }
+            steps{
+                script{
+                    withAWS(role: "${iamAssumeRoleS3}") {
+                        s3Upload(file:"/projects/iflyloyalty/home/jenkins/home/workspace/iLoyalCI/Packaging/$BUILD_NUMBER/devops/Helm/", bucket:"${params['S3Bucket']}", path:'Artefacts/Helm/')
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            script {
+                 sh "rm -rf Packaging/$BUILD_NUMBER";
+                echo "Deleted Workspace"
+            }
+        }
+    }
+}
+
